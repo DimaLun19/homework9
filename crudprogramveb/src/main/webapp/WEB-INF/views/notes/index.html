@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All notes</title> <!-- заголовок говорит, что здесь выводятся все заметки -->
+</head>
+<body>
+
+<div th:each="note : ${notes}"> <!-- выводим названия -->
+    <a th:href="@{/notes/{id} (id=${note.getId()})}" th:text="${note.getNote()}">note</a> <!-- находим названия по id, они же являются ссылками -->
+</div>
+
+<br/>
+<hr/>
+
+<a href="notes/new">New note</a> <!-- ссылка для создания новой заметки -->
+
+</body>
+</html>

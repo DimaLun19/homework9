@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Note</title> <!-- заголовок говорит, что здесь конкретная заметка -->
+</head>
+<body>
+<p th:text="${note.getNote()}">Note</p> <!-- указываем название заметки -->
+<p th:text="${note.getId()}">ID</p> <!-- указываем id заметки -->
+<a th:href="@{/notes/{id}/edit(id=${note.getId()})}">Edit</a> <!-- ссылка на странице с заметкой -->
+<form th:method="DELETE" th:action="@{/notes/{id}(id=${note.getId()})}"> <!-- ссылка для удаления -->
+    <input type="submit" value="Delete"/>
+</form>
+
+</body>
+</html>
